@@ -1,0 +1,33 @@
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>SmokeyJoeNFT - Collection</title>
+        <style>
+            body {
+                background-color: rgb(13, 13, 41);
+                color: antiquewhite;
+            }
+            .collection {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="font-family: fantasy; text-align: center; margin-top: 70px; font-size: 70px;">SmokeyJoe Collection</h1>
+        <div class="collection">
+            {% for joe in all_joe %}
+            <div class="card" style="width: 18rem; margin-left: 140px; background-color: black;">
+                <img class="card-img-top" src="{{ joe.image.url }}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ joe.name }}</h5>
+                    <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
